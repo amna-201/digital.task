@@ -1,0 +1,40 @@
+Dart pass:
+Q2/
+import 'dart:ffi';
+import 'dart:io';
+
+class Account{
+
+  final int _accountNo;
+  final String _name;
+  final String _dateOfBirth;
+  final double _amount;
+  final DateTime _dateCreated;
+
+  List ac=[];
+  List amount=[];
+  Account(this._accountNo, this._name, this._dateOfBirth, this._amount, this._dateCreated);
+
+  insert(int _accountNo,String _name,String _dateOfBirth,double _amount,DateTime _dateCreated){
+    ac.add(_name);
+    ac.add(_dateOfBirth);
+    ac.add(_accountNo);
+    ac.add(_dateCreated);
+    amount.add(_amount);
+  }
+  deposit(int amu){
+    amount.forEach((element) {print(element+amu);});
+  }
+  withdraw(int amu){
+    amount.forEach((element) {print((element-amu).toString());});
+  }
+  checkBalance(){
+    amount.forEach((element) {print(element.toString());});
+  }
+}
+
+void main(List<String> arguments) {
+  var A=Account(1, "Account", "1999", 123.toDouble(), new DateTime.now());
+  var B=Account(1, "Account", "1999", 123.toDouble(), new DateTime.now());
+  var C=Account(1, "Account", "1999", 123.toDouble(), new DateTime.now());
+}
